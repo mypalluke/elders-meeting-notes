@@ -145,7 +145,7 @@
               <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition-colors"></i>
             </div>
             <h4 class="text-sm font-bold text-white mt-0.5">Reach the Heart</h4>
-            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Teaching with genuine enthusiasm & animated delivery.</p>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Enthusiasm & Extemporaneous Delivery.</p>
           </div>
         </div>
 
@@ -357,103 +357,223 @@
         </div>
       </div>
 
-      <!-- Overview Header -->
-      <div class="p-4 bg-gradient-to-br from-indigo-950/30 to-slate-800/40 border border-indigo-900/30 rounded-xl">
-        <h3 class="text-sm font-bold text-white flex items-center gap-1.5 mb-2">
-          <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i> Topic: Enthusiasm
-        </h3>
-        <div class="space-y-2">
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            <strong class="text-indigo-300">The Goal:</strong> To use animated delivery to show strong feelings about the value of your message.
-          </p>
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            <strong class="text-indigo-300">The Importance:</strong> Enthusiasm is highly contagious! It captures attention, brings life to the talk, and motivates listeners to take action.
-          </p>
+      <!-- Teaching Sub-Tabs -->
+      <div class="flex bg-slate-800/60 p-1 rounded-xl border border-slate-800 mb-2">
+        <button onclick="switchTeaching('enthusiasm')" id="btn-teach-enthusiasm" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center bg-indigo-600 text-white shadow-sm">
+          Enthusiasm
+        </button>
+        <button onclick="switchTeaching('extemp')" id="btn-teach-extemp" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200">
+          Extemporaneous
+        </button>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- PANEL A: ENTHUSIASM                          -->
+      <!-- ============================================== -->
+      <div id="panel-teach-enthusiasm" class="teach-panel space-y-5">
+        <!-- Overview Header -->
+        <div class="p-4 bg-gradient-to-br from-indigo-950/30 to-slate-800/40 border border-indigo-900/30 rounded-xl">
+          <h3 class="text-sm font-bold text-white flex items-center gap-1.5 mb-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i> Topic: Enthusiasm
+          </h3>
+          <div class="space-y-2">
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              <strong class="text-indigo-300">The Goal:</strong> To use animated delivery to show strong feelings about the value of your message.
+            </p>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              <strong class="text-indigo-300">The Importance:</strong> Enthusiasm is highly contagious! It captures attention, brings life to the talk, and motivates listeners to take action.
+            </p>
+          </div>
+        </div>
+
+        <!-- Core Teaching Principles Grid -->
+        <div class="grid gap-3">
+          <!-- 1. Speak with feeling -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">1</span>
+              Speak With Feeling
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Heartfelt Motivation:</strong> True speaking stems from an appreciative heart (worship in "spirit and truth"). It naturally shows in your face, gestures, and voice.</li>
+              <li><strong>Live Your Subject:</strong> Don't just prep notes; get emotionally invested. Example: When speaking of the ransom, focus on your *personal* gratitude.</li>
+              <li><strong>Prepare Your Heart:</strong> Like Ezra, prepare your heart first so listeners develop genuine love for the truth.</li>
+            </ul>
+          </div>
+
+          <!-- 2. Think about audience -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">2</span>
+              Think About Your Audience
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Have Conviction:</strong> Believe deeply that the audience *needs* this message. Pray for guidance.</li>
+              <li><strong>Find a Fresh Angle:</strong> Material doesn't have to be new, but your approach should be. Focus on how it directly helps them cope or improve their faith.</li>
+              <li><strong>Field Ministry Tip:</strong> Equip yourself with Bible solutions to common, current news/problems. It naturally sparks eagerness to share!</li>
+            </ul>
+          </div>
+
+          <!-- 3. Animated Delivery -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">3</span>
+              Animated Delivery
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Facial Expressions:</strong> Animation should be visible on your face. Sound convinced, but not dogmatic.</li>
+              <li><strong>Maintain Balance:</strong> Do not overdo it. Being bombastic or overly emotional makes the audience think about *you* instead of the *message*.</li>
+              <li><strong>Overcome Shyness:</strong> Like Apollos, combine good audience contact with genuine enthusiasm to move listeners to action.</li>
+            </ul>
+          </div>
+
+          <!-- 4. Appropriate to Material -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">4</span>
+              Appropriate to Material
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Pacing & Variety:</strong> High enthusiasm constantly will exhaust the audience. Variety is essential.</li>
+              <li><strong>Save for Climaxes:</strong> Save your highest enthusiasm for main points and peaks, especially when motivating application.</li>
+              <li><strong>Keep it Genuine:</strong> Never force it; the material dictates the emotion.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Actionable Checklist -->
+        <div class="bg-indigo-950/20 border border-indigo-900/40 p-4 rounded-xl mt-2">
+          <h4 class="text-xs font-bold text-white flex items-center gap-1.5 mb-2.5 uppercase tracking-wider">
+            <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400"></i> Summary: How to Develop It
+          </h4>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
+              <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
+              <span class="text-[11px] text-slate-300"><strong>Involve Emotions:</strong> Prepare not only the info, but also your heart.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
+              <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
+              <span class="text-[11px] text-slate-300"><strong>Focus on Audience:</strong> Consider how points directly benefit listeners.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
+              <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
+              <span class="text-[11px] text-slate-300"><strong>Map It Out:</strong> Identify the specific portions that require special enthusiasm.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
+              <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
+              <span class="text-[11px] text-slate-300"><strong>Be Alive:</strong> Speak with strength, ensuring your face reflects the feelings.</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Core Teaching Principles Grid -->
-      <div class="grid gap-3">
-        
-        <!-- 1. Speak with feeling -->
-        <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
-          <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
-            <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">1</span>
-            Speak With Feeling
-          </h4>
-          <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
-            <li><strong>Heartfelt Motivation:</strong> True speaking stems from an appreciative heart (worship in "spirit and truth"). It naturally shows in your face, gestures, and voice.</li>
-            <li><strong>Live Your Subject:</strong> Don't just prep notes; get emotionally invested. Example: When speaking of the ransom, focus on your *personal* gratitude.</li>
-            <li><strong>Prepare Your Heart:</strong> Like Ezra, prepare your heart first so listeners develop genuine love for the truth.</li>
-          </ul>
+      <!-- ============================================== -->
+      <!-- PANEL B: EXTEMPORANEOUS                      -->
+      <!-- ============================================== -->
+      <div id="panel-teach-extemp" class="teach-panel space-y-5 hidden">
+        <!-- Overview Header -->
+        <div class="p-4 bg-gradient-to-br from-indigo-950/30 to-slate-800/40 border border-indigo-900/30 rounded-xl">
+          <h3 class="text-sm font-bold text-white flex items-center gap-1.5 mb-2">
+            <i data-lucide="mic-2" class="w-4 h-4 text-indigo-400"></i> Topic: Extemporaneous Delivery
+          </h3>
+          <div class="space-y-2">
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              <strong class="text-indigo-300">The Goal:</strong> To speak using spontaneous word choice combined with the careful, advanced preparation of ideas.
+            </p>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              <strong class="text-indigo-300">The Importance:</strong> It is the most effective method to capture interest, hold attention, and motivate an audience. If listeners' attention is divided, you cannot reach their hearts.
+            </p>
+          </div>
         </div>
 
-        <!-- 2. Think about audience -->
-        <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
-          <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
-            <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">2</span>
-            Think About Your Audience
-          </h4>
-          <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
-            <li><strong>Have Conviction:</strong> Believe deeply that the audience *needs* this message. Pray for guidance.</li>
-            <li><strong>Find a Fresh Angle:</strong> Material doesn't have to be new, but your approach should be. Focus on how it directly helps them cope or improve their faith.</li>
-            <li><strong>Field Ministry Tip:</strong> Equip yourself with Bible solutions to common, current news/problems. It naturally sparks eagerness to share!</li>
-          </ul>
+        <!-- Core Teaching Principles Grid -->
+        <div class="grid gap-3">
+          
+          <!-- 1. The Manuscript Trap -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">1</span>
+              The Manuscript Trap
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Mental Trap:</strong> Writing a talk word-for-word tempts you to remember exact phrasing rather than focusing on the flow of ideas.</li>
+              <li><strong>Tone Issues:</strong> Written language is more complex and formal than everyday speech, causing your delivery to sound stiff instead of conversational.</li>
+            </ul>
+          </div>
+
+          <!-- 2. Step-by-Step Preparation -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">2</span>
+              Step-by-Step Preparation
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Select the Core:</strong> Choose your theme and 2-5 main aspects to develop it.</li>
+              <li><strong>Flesh Out Points:</strong> Note principal scriptures, illustrations, and arguments. Focus on the logical development, not words.</li>
+              <li><strong>Plan the Bookends:</strong> Write out 1 or 2 sentences for your intro/conclusion to ensure a strong start and finish.</li>
+              <li><strong>Practice:</strong> Don't memorize words. Review until ideas naturally follow each other in your mind.</li>
+            </ul>
+          </div>
+
+          <!-- 3. The Benefits -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">3</span>
+              The Benefits
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Conversational Tone:</strong> Sounds warm and down-to-earth, leading to better audience contact and built trust.</li>
+              <li><strong>Maximum Flexibility:</strong> Easily adjust for late-breaking news or adapt illustrations to the specific audience on the fly.</li>
+              <li><strong>Mental Stimulation:</strong> Engaging a responsive audience allows you to naturally expand or course-correct based on their interest.</li>
+            </ul>
+          </div>
+
+          <!-- 4. Pitfalls & Solutions -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">4</span>
+              Pitfalls & Solutions
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Running Overtime:</strong> Because you add ideas, write specific time markers on your outline and stick to them.</li>
+              <li><strong>Overconfidence vs Fear:</strong> Experienced speakers must avoid throwing ideas together (pray for humility). Newer speakers must prep deeply to combat the fear of blanking out.</li>
+              <li><strong>Grammar Concerns:</strong> Don't worry about perfect precision. Conversational style compensates for manuscript precision!</li>
+            </ul>
+          </div>
+
+          <!-- 5. Handling Impromptu & Notes -->
+          <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+            <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
+              <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">5</span>
+              Impromptu & Notes
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
+              <li><strong>Ideal Outline:</strong> Reduce to a few key words/scriptures. For extensive notes, highlight only the keywords to avoid reading lines.</li>
+              <li><strong>When to Read:</strong> It is highly effective to memorize or read specific portions: intros, conclusions, quotes, and scriptures.</li>
+              <li><strong>The Nehemiah Approach (Impromptu):</strong> Pray silently -> Formulate a quick mental outline (1-2 points) -> Choose scriptures -> Plan a tactful opening -> Speak.</li>
+            </ul>
+          </div>
+
         </div>
 
-        <!-- 3. Animated Delivery -->
-        <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
-          <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
-            <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">3</span>
-            Animated Delivery
+        <!-- Action Items Checklist -->
+        <div class="bg-indigo-950/20 border border-indigo-900/40 p-4 rounded-xl mt-2">
+          <h4 class="text-xs font-bold text-white flex items-center gap-1.5 mb-2.5 uppercase tracking-wider">
+            <i data-lucide="target" class="w-4 h-4 text-indigo-400"></i> Action Items to Work On
           </h4>
-          <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
-            <li><strong>Facial Expressions:</strong> Animation should be visible on your face. Sound convinced, but not dogmatic.</li>
-            <li><strong>Maintain Balance:</strong> Do not overdo it. Being bombastic or overly emotional makes the audience think about *you* instead of the *message*.</li>
-            <li><strong>Overcome Shyness:</strong> Like Apollos, combine good audience contact with genuine enthusiasm to move listeners to action.</li>
-          </ul>
+          <div class="space-y-2">
+            <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
+              <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
+              <span class="text-[11px] text-slate-300"><strong>Exercise 1:</strong> During personal study, stop highlighting full sentences. Practice underscoring only key expressions and answering in your own words.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
+              <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
+              <span class="text-[11px] text-slate-300"><strong>Exercise 2:</strong> For your next assignment, test preparation by repeating your theme and main points entirely from memory before stepping onto the platform.</span>
+            </div>
+          </div>
         </div>
-
-        <!-- 4. Appropriate to Material -->
-        <div class="bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
-          <h4 class="text-sm font-bold text-indigo-300 flex items-center gap-2 mb-2">
-            <span class="bg-indigo-500/10 text-indigo-400 w-5 h-5 flex items-center justify-center rounded-full text-[10px] border border-indigo-500/20">4</span>
-            Appropriate to Material
-          </h4>
-          <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 marker:text-slate-600">
-            <li><strong>Pacing & Variety:</strong> High enthusiasm constantly will exhaust the audience. Variety is essential.</li>
-            <li><strong>Save for Climaxes:</strong> Save your highest enthusiasm for main points and peaks, especially when motivating application.</li>
-            <li><strong>Keep it Genuine:</strong> Never force it; the material dictates the emotion.</li>
-          </ul>
-        </div>
-
       </div>
 
-      <!-- Actionable Checklist -->
-      <div class="bg-indigo-950/20 border border-indigo-900/40 p-4 rounded-xl mt-2">
-        <h4 class="text-xs font-bold text-white flex items-center gap-1.5 mb-2.5 uppercase tracking-wider">
-          <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400"></i> Summary: How to Develop It
-        </h4>
-        <div class="space-y-2">
-          <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
-            <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
-            <span class="text-[11px] text-slate-300"><strong>Involve Emotions:</strong> Prepare not only the info, but also your heart.</span>
-          </div>
-          <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
-            <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
-            <span class="text-[11px] text-slate-300"><strong>Focus on Audience:</strong> Consider how points directly benefit listeners.</span>
-          </div>
-          <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
-            <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
-            <span class="text-[11px] text-slate-300"><strong>Map It Out:</strong> Identify the specific portions that require special enthusiasm.</span>
-          </div>
-          <div class="flex items-start gap-2 bg-slate-900/50 p-2 rounded border border-slate-800">
-            <input type="checkbox" class="mt-0.5 rounded text-indigo-500 bg-slate-800 border-slate-700" />
-            <span class="text-[11px] text-slate-300"><strong>Be Alive:</strong> Speak with strength, ensuring your face reflects the feelings.</span>
-          </div>
-        </div>
-      </div>
-      
     </div>
 
   </main>
@@ -500,6 +620,7 @@
     // State Tracking
     let activeTab = 'home';
     let activeBrother = 'A';
+    let activeTeaching = 'enthusiasm';
     let privacyBlurred = false;
 
     // Switch between Agenda Focus Points
@@ -561,6 +682,29 @@
           btn.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200";
         }
       });
+    }
+
+    // Switch between Teaching Sub-Tabs (Point 4)
+    function switchTeaching(topic) {
+      activeTeaching = topic;
+
+      // Update Panel visibility
+      document.querySelectorAll('.teach-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      document.getElementById(`panel-teach-${topic}`).classList.remove('hidden');
+
+      // Update Tab Styles
+      const btnEnthusiasm = document.getElementById('btn-teach-enthusiasm');
+      const btnExtemp = document.getElementById('btn-teach-extemp');
+
+      if (topic === 'enthusiasm') {
+        btnEnthusiasm.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center bg-indigo-600 text-white shadow-sm";
+        btnExtemp.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200";
+      } else {
+        btnExtemp.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center bg-indigo-600 text-white shadow-sm";
+        btnEnthusiasm.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200";
+      }
     }
 
     // Toggle Privacy/Stealth Mode
