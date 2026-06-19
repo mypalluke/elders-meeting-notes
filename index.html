@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elders Meeting Prep - Personal Notes</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theocracy: {
+              50: '#f0f4f8',
+              100: '#dbeafe',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth transitions */
+    .fade-in {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Hide scrollbar for clean sub-tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen pb-20 selection:bg-blue-500 selection:text-white">
+
+  <!-- TOP HEADER (STAYS FIXED) -->
+  <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-md">
+    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+      <div onclick="switchTab('home')" class="cursor-pointer">
+        <h1 class="text-xs font-semibold uppercase tracking-widest text-blue-400">Personal Prep Notes</h1>
+        <p class="text-sm font-bold text-white flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 text-blue-400"></i> Luke's Notes
+        </p>
+      </div>
+      
+      <!-- Privacy Toggle (Protects sensitive names instantly) -->
+      <button onclick="togglePrivacy()" id="privacy-btn" class="flex items-center gap-1 bg-slate-800 hover:bg-slate-700 active:scale-95 text-xs text-slate-300 font-medium px-3 py-1.5 rounded-full transition-all border border-slate-700">
+        <i data-lucide="eye" id="privacy-icon" class="w-3.5 h-3.5"></i>
+        <span id="privacy-text">Stealth Off</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER (Optimized for Mobile/Max Width) -->
+  <main class="max-w-md mx-auto px-4 pt-4 pb-12">
+
+    <!-- HOME/TITLE PAGE -->
+    <div id="tab-home" class="tab-content fade-in space-y-5">
+      <!-- Title Card -->
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 to-slate-950 p-6 border border-slate-700/50 shadow-xl">
+        <div class="absolute -right-10 -bottom-10 opacity-10">
+          <i data-lucide="award" class="w-40 h-40 text-blue-400"></i>
+        </div>
+        <span class="inline-block bg-blue-500/10 text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-3 border border-blue-500/20">
+          Strictly Confidential
+        </span>
+        <h2 class="text-2xl font-bold tracking-tight text-white">Elders Meeting</h2>
+        <p class="text-xs text-slate-400 mt-1">Ready for discussion & shepherding reviews</p>
+        
+        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center gap-2 text-xs text-slate-300">
+          <i data-lucide="user-check" class="w-4 h-4 text-emerald-400"></i>
+          <span>Prepared by: <strong class="text-white">Brother Luke Holland</strong></span>
+        </div>
+      </div>
+
+      <!-- Agenda Focus Selector -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 px-1">Meeting Agenda Items</h3>
+        
+        <!-- Agenda Card 1 -->
+        <div onclick="switchTab('point1')" class="cursor-pointer group flex items-start gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-800 hover:border-slate-700 shadow">
+          <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold text-blue-400 uppercase tracking-wide">Point 1</span>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition-colors"></i>
+            </div>
+            <h4 class="text-sm font-bold text-white mt-0.5">Evaluate Three Servants</h4>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Reviewing scriptural fitness for Brother A, B, and C.</p>
+          </div>
+        </div>
+
+        <!-- Agenda Card 2 -->
+        <div onclick="switchTab('point2')" class="cursor-pointer group flex items-start gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-800 hover:border-slate-700 shadow">
+          <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Point 2</span>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition-colors"></i>
+            </div>
+            <h4 class="text-sm font-bold text-white mt-0.5">Shepherding Inactive Publishers</h4>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">6 loving, non-analytical guidelines for group overseers.</p>
+          </div>
+        </div>
+
+        <!-- Agenda Card 3 -->
+        <div onclick="switchTab('point3')" class="cursor-pointer group flex items-start gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-800 hover:border-slate-700 shadow">
+          <div class="p-3 bg-rose-500/10 rounded-xl text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-all">
+            <i data-lucide="alert-octagon" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold text-rose-400 uppercase tracking-wide">Point 3</span>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300 transition-colors"></i>
+            </div>
+            <h4 class="text-sm font-bold text-white mt-0.5">Assess Serious Allegation</h4>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Evaluating reports of drunkenness & notoriety for Individual X.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Guidance Message -->
+      <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-xl">
+        <h4 class="text-xs font-bold text-slate-300 flex items-center gap-1.5 mb-1.5">
+          <i data-lucide="info" class="w-3.5 h-3.5 text-blue-400"></i> Reminder on Confidentiality
+        </h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          These notes are for personal reference. Use the "Stealth Mode" button at the top to blur out real names on your screen if sitting near others.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- POINT 1: THE THREE BROTHERS -->
+    <div id="tab-point1" class="tab-content fade-in space-y-5 hidden">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3">
+        <button onclick="switchTab('home')" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Agenda Item 1</span>
+          <h2 class="text-lg font-bold text-white">Evaluating 3 Brothers</h2>
+        </div>
+      </div>
+
+      <!-- Biblical Foundation (Expandable) -->
+      <details class="bg-slate-800/40 rounded-xl border border-slate-800 overflow-hidden group">
+        <summary class="flex justify-between items-center p-3.5 cursor-pointer hover:bg-slate-800/80 transition-colors">
+          <span class="text-xs font-bold tracking-wide flex items-center gap-2">
+            <i data-lucide="scroll" class="w-4 h-4 text-blue-400"></i> Scriptural Qualifications Blueprint
+          </span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="p-4 border-t border-slate-800/60 bg-slate-900/40 space-y-3 text-xs leading-relaxed text-slate-300">
+          <p class="italic border-l-2 border-blue-500/40 pl-3">
+            "Ministerial servants should likewise be serious, not double-tongued, not indulging in a lot of wine, not greedy of dishonest gain, holding the sacred secret of the faith with a clean conscience. Also, let these be tested as to fitness first..." <span class="text-slate-400 font-semibold block mt-1">— 1 Timothy 3:8-10</span>
+          </p>
+          <div class="grid grid-cols-2 gap-2 pt-2">
+            <div class="bg-slate-800/50 p-2 rounded">
+              <strong class="text-blue-300">James 3:17, 18</strong>
+              <p class="text-[11px] text-slate-400 mt-0.5">Heavenly wisdom: peaceable, reasonable, ready to obey.</p>
+            </div>
+            <div class="bg-slate-800/50 p-2 rounded">
+              <strong class="text-blue-300">1 Peter 5:2, 3</strong>
+              <p class="text-[11px] text-slate-400 mt-0.5">Shepherding willingly, eagerly, serving as examples.</p>
+            </div>
+          </div>
+          <div class="p-2.5 bg-blue-950/20 border border-blue-900/30 rounded text-[11px] text-slate-300">
+            <strong>Key Perspective:</strong> We do not look for sinless perfection, but a consistent, mature pattern of spiritual life. They must not be seriously lacking in any core scriptural requirement.
+          </div>
+        </div>
+      </details>
+
+      <!-- Sub-tab Bar for Brothers (Sticky Horizontal Scroll) -->
+      <div class="flex bg-slate-800/60 p-1 rounded-xl border border-slate-800">
+        <button onclick="switchBrother('A')" id="btn-bro-A" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center bg-blue-600 text-white shadow-sm">
+          Brother A
+        </button>
+        <button onclick="switchBrother('B')" id="btn-bro-B" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200">
+          Brother B
+        </button>
+        <button onclick="switchBrother('C')" id="btn-bro-C" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200">
+          Brother C
+        </button>
+      </div>
+
+      <!-- BROTHER A DETAILS -->
+      <div id="panel-bro-A" class="brother-panel space-y-4">
+        <!-- Profile Banner -->
+        <div class="bg-gradient-to-r from-blue-900/20 to-slate-800/40 p-4 rounded-xl border border-blue-900/20">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <span class="sensitive-data">Brother A</span>
+              </h3>
+              <p class="text-xs text-blue-400 font-semibold mt-0.5">Regular Pioneer & Serious Minded</p>
+            </div>
+            <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded border border-blue-500/20">Young / Very Capable</span>
+          </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="space-y-3">
+          <!-- Metric 1 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i> Tested as to Fitness First
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Highly serious-minded. Exceptionally reliable and available to fulfill his assignments: handles congregation meeting parts, audio/video sound systems, microphones, hall cleaning, work days, and his newly assigned territory.
+            </p>
+          </div>
+
+          <!-- Metric 2 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-400"></i> Speech & Conduct (Not Double-Tongued)
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Discreet and respectful of authority. Not a gossiper. It is deeply embedded in who he is as a person—he treats his parents and everyone else with genuine respect.
+            </p>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="home" class="w-3.5 h-3.5 text-blue-400"></i> Family & Reputation
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Highly obedient and respectful at home. Possesses an excellent reputation inside and outside the congregation. Recently delivered an outstanding, exemplary part at the Circuit Assembly.
+            </p>
+          </div>
+
+          <!-- Metric 4 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-400"></i> Freeness of Speech ($parrhēsia$)
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Consistently active. Serves zealously as a <span class="text-blue-300 font-semibold">Regular Pioneer</span>, showing that he consistently places the Kingdom first in his life.
+            </p>
+          </div>
+          
+          <!-- My Personal Recommendation -->
+          <div class="bg-blue-950/25 border border-blue-900/30 p-4 rounded-xl">
+            <h4 class="text-xs font-bold text-blue-300 uppercase tracking-wider mb-1.5">My Elder Perspective</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              His youth should not prevent appointment. He responds excellently to training, his work ethic is beyond reproach, and he is a model of Christian seriousness. I fully support his appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BROTHER B DETAILS -->
+      <div id="panel-bro-B" class="brother-panel space-y-4 hidden">
+        <!-- Profile Banner -->
+        <div class="bg-gradient-to-r from-blue-900/20 to-slate-800/40 p-4 rounded-xl border border-blue-900/20">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <span class="sensitive-data">Brother B</span>
+              </h3>
+              <p class="text-xs text-blue-400 font-semibold mt-0.5">Eager, Capable & Excellent Teacher</p>
+            </div>
+            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-500/20">Already Doing The Work</span>
+          </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="space-y-3">
+          <!-- Metric 1 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i> Tested as to Fitness First
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Served as a ministerial servant in the past (over 5 years ago). He currently organizes and schedules public talks flawlessly. Highly skilled with AV and sound systems, famously assisted with the special meeting with the branch.
+            </p>
+          </div>
+
+          <!-- Metric 2 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-400"></i> Speech & Conduct (Not Double-Tongued)
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Discreet and highly supportive of the elders and all organizational arrangements. Never gossips. He follows direction beautifully with true humility.
+            </p>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="home" class="w-3.5 h-3.5 text-blue-400"></i> Family & Reputation
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Acts as a solid, proactive head of family. When issues arise, he takes care of them immediately. His spiritual endurance and positive attitude after losing his job was exemplary to the entire congregation.
+            </p>
+          </div>
+
+          <!-- Metric 4 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-400"></i> Freeness of Speech ($parrhēsia$)
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Zealous publisher who auxiliary pioneers whenever he can. His student talks are incredibly well-prepared and on point. He is highly skilled at sparking deep conversations at the doors.
+            </p>
+          </div>
+          
+          <!-- My Personal Recommendation -->
+          <div class="bg-blue-950/25 border border-blue-900/30 p-4 rounded-xl">
+            <h4 class="text-xs font-bold text-blue-300 uppercase tracking-wider mb-1.5">My Elder Perspective</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              He has grown immensely in his spirituality since he last served. Based on our private conversations, he is eager and ready. His teaching is of public talk caliber, and he is functionally already performing the workload of a servant. I support his immediate appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BROTHER C DETAILS -->
+      <div id="panel-bro-C" class="brother-panel space-y-4 hidden">
+        <!-- Profile Banner -->
+        <div class="bg-gradient-to-r from-blue-900/20 to-slate-800/40 p-4 rounded-xl border border-blue-900/20">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <span class="sensitive-data">Brother C</span>
+              </h3>
+              <p class="text-xs text-blue-400 font-semibold mt-0.5">Modest, Humble & Kind Mentor</p>
+            </div>
+            <span class="bg-amber-500/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded border border-amber-500/20">Balanced / Experienced</span>
+          </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="space-y-3">
+          <!-- Metric 1 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i> Tested as to Fitness First
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Always ready and willing to support. He has previous servant experience. Currently serves reliably in roles like congregation attendance and sound, and personally trained me on the platform when we first moved into the hall.
+            </p>
+          </div>
+
+          <!-- Metric 2 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-400"></i> Speech & Conduct (Not Double-Tongued)
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Quiet, reserved, and extremely kind-hearted. He is deeply respectful of congregation arrangements and quiet in supportive coordination.
+            </p>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="home" class="w-3.5 h-3.5 text-blue-400"></i> Family & Reputation
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Successfully takes the lead of his household. His wife is deeply respectful of his scriptural headship, and his daughter looks up to him as a spiritual pillar.
+            </p>
+          </div>
+
+          <!-- Metric 4 -->
+          <div class="bg-slate-800/30 border border-slate-800/80 p-3.5 rounded-xl">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-400"></i> Freeness of Speech ($parrhēsia$)
+            </h4>
+            <p class="text-sm text-slate-200 leading-relaxed">
+              Extremely quiet by nature, but sets an example worthy of imitation. Though he wrestles with personal self-doubt, he consistently pushes through to do his absolute best in the ministry.
+            </p>
+          </div>
+          
+          <!-- My Personal Recommendation -->
+          <div class="bg-blue-950/25 border border-blue-900/30 p-4 rounded-xl">
+            <h4 class="text-xs font-bold text-blue-300 uppercase tracking-wider mb-1.5">My Elder Perspective</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              He previously stepped down to balance family priorities. In his own words, he struggled with saying "no" to assignments, which initially impacted his family. He has learned from this and is now much more cautious. 
+              <br><span class="block mt-2 font-semibold text-amber-400">Recommendation:</span> Support his appointment, but protect him by actively managing his assignment workload initially so he doesn't feel overwhelmed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- POINT 2: SHEPHERDING INACTIVE PUBLISHERS -->
+    <div id="tab-point2" class="tab-content fade-in space-y-5 hidden">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3">
+        <button onclick="switchTab('home')" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Agenda Item 2</span>
+          <h2 class="text-lg font-bold text-white">Shepherding the Groups</h2>
+        </div>
+      </div>
+
+      <!-- Quick Concept Statement -->
+      <div class="p-4 bg-gradient-to-br from-emerald-950/20 to-slate-800/40 rounded-xl border border-emerald-900/20">
+        <p class="text-xs text-emerald-300 leading-relaxed">
+          How can Group Overseers & assistants coordinate dynamically to reach inactive or irregular friends with genuine Christian empathy? These are my 6 primary focus points for the body:
+        </p>
+      </div>
+
+      <!-- 6 Heart-Centered Core Principles -->
+      <div class="space-y-3">
+        
+        <!-- Card 1 -->
+        <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold border border-emerald-500/20">1</span>
+          <div>
+            <h4 class="text-sm font-bold text-white">Set the Example of Zeal</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-1">
+              Actions speak louder than plans. Overseers and assistants must lead the way by displaying joy and active participation in the field ministry, making it naturally appealing for others to join.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold border border-emerald-500/20">2</span>
+          <div>
+            <h4 class="text-sm font-bold text-white">People, Not Checkboxes</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-1">
+              Do not treat inactive or irregular ones as records to update. We must deeply love our brothers and sisters. Never let a visit or call feel like a routine administration check-off.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold border border-emerald-500/20">3</span>
+          <div>
+            <h4 class="text-sm font-bold text-white">Deep Interest in Their Lives</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-1">
+              Take the time to listen and care. Ask sincerely about their health, their family, and their day-to-day challenges before attempting to discuss attendance, meeting links, or service.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold border border-emerald-500/20">4</span>
+          <div>
+            <h4 class="text-sm font-bold text-white">Coordinate with Assistant</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-1">
+              Collaborate closely. The group overseer and assistant should map out their specific group list together to identify who needs practical help, separating administrative lists to focus on target needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold border border-emerald-500/20">5</span>
+          <div>
+            <h4 class="text-sm font-bold text-white">Check Missing Reports Wisely</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-1">
+              Some friends might simply have forgotten to turn in their monthly reports. Confirm this gently before concluding someone has drifted away or requires an intensive shepherding intervention.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+          <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold border border-emerald-500/20">6</span>
+          <div>
+            <h4 class="text-sm font-bold text-white">Avoid Being a "Busybody"</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mt-1">
+              Respect personal privacy and maintain clean boundaries. Avoid prying or asking overly invasive questions about personal affairs. Truly show them we care for them with respect.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Presentation Tip -->
+      <div class="p-4 bg-slate-800/30 border border-slate-800 rounded-xl space-y-2">
+        <h4 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+          <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i> Presentation Objective
+        </h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          
+        </p>
+      </div>
+    </div>
+
+
+    <!-- POINT 3: JUDICIAL ASSESSMENT (INDIVIDUAL X) -->
+    <div id="tab-point3" class="tab-content fade-in space-y-5 hidden">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3">
+        <button onclick="switchTab('home')" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Agenda Item 3</span>
+          <h2 class="text-lg font-bold text-white">Assess Allegation</h2>
+        </div>
+      </div>
+
+      <!-- Current Overview -->
+      <div class="p-4 bg-rose-950/20 border border-rose-900/30 rounded-xl">
+        <h3 class="text-xs font-bold text-rose-300 flex items-center gap-1.5 mb-1">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> Pending Investigative Report
+        </h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          An allegation was received that <strong class="text-white sensitive-data">Individual X</strong> is struggling with alcoholism. Two brothers were sent to investigate, and we are awaiting their official report. Our goal at this meeting is to analyze their findings to see if the criteria exist to form a judicial committee.
+        </p>
+      </div>
+
+      <!-- The Core Scriptural Principles -->
+      <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-4 space-y-3">
+        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+          <i data-lucide="scroll" class="w-4 h-4 text-rose-400"></i> Scriptural Blueprint (1 Cor 6:9, 10; 5:11)
+        </h4>
+        <p class="text-xs text-slate-300 leading-relaxed italic border-l-2 border-rose-500/40 pl-3">
+          "But now I am writing you to stop keeping company with anyone called a brother who is... a drunkard... not even eating with such a man."
+        </p>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          <strong>Definition of Drunkenness:</strong> The state of losing command of mental and physical faculties due to overindulging in alcoholic beverages. A drunkard is one who habitually or practice-wise overindulges.
+        </p>
+      </div>
+
+      <!-- Explaining Crucial Definitions (Practice vs Notoriety) -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 px-1">Judicial Assessment Criteria</h4>
+        
+        <!-- Practice block -->
+        <div class="bg-slate-800/30 border border-slate-800 p-3.5 rounded-xl">
+          <h5 class="text-xs font-bold text-rose-400 uppercase mb-1">What is a "Practice of Drunkenness"?</h5>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            A repetitive, ongoing pattern of overindulgence to the point of complete intoxication. It cannot be classified as a single, isolated accidental misstep. We must find out from the report if there are multiple verifiable instances establishing a habit.
+          </p>
+        </div>
+
+        <!-- Notoriety block -->
+        <div class="bg-slate-800/30 border border-slate-800 p-3.5 rounded-xl">
+          <h5 class="text-xs font-bold text-rose-400 uppercase mb-1">What is "Notoriety"?</h5>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            The degree to which the wrong behavior has become known outside of the private setting. Has it brought clear reproach on the congregation? Is it widely talked about in the community or congregation, or was it confined to a private home context?
+          </p>
+        </div>
+      </div>
+
+      <!-- Investigative Review Guide (Interactions) -->
+      <div class="bg-slate-800/60 border border-slate-800 p-4 rounded-xl space-y-3">
+        <h4 class="text-xs font-bold text-white flex items-center gap-1.5">
+          <i data-lucide="check-square" class="w-4 h-4 text-rose-400"></i> Checklist For Listening to the Report
+        </h4>
+        <p class="text-[11px] text-slate-400">Check off criteria as the two brothers detail their investigation:</p>
+        
+        <div class="space-y-2.5 pt-1">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="mt-0.5 rounded text-rose-500 bg-slate-900 border-slate-700 focus:ring-rose-500">
+            <span class="text-xs text-slate-300">Are there at least two eyewitnesses, or has the individual confessed?</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="mt-0.5 rounded text-rose-500 bg-slate-900 border-slate-700 focus:ring-rose-500">
+            <span class="text-xs text-slate-300">Is this a continuous, ongoing practice (habitual) rather than a singular event?</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="mt-0.5 rounded text-rose-500 bg-slate-900 border-slate-700 focus:ring-rose-500">
+            <span class="text-xs text-slate-300">Has the situation attained widespread notoriety in the area or congregation?</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="mt-0.5 rounded text-rose-500 bg-slate-900 border-slate-700 focus:ring-rose-500">
+            <span class="text-xs text-slate-300">Is there an active attitude of hiding the matter or a display of hardness?</span>
+          </label>
+        </div>
+        
+        <div class="bg-slate-900/60 p-3 rounded-lg text-[11px] text-slate-400 leading-relaxed border border-slate-800/60 mt-2">
+          <strong>Decision Guideline:</strong> If the facts show a clear, unrepentant <em>practice</em> or public <em>notoriety</em>, we form a judicial committee. If it is a private, isolated failure with deep sorrow, we focus on shepherdly assistance.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- NAVIGATION BAR (STABLE AND ACCESSIBLE) -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-slate-800/80 shadow-lg">
+    <div class="max-w-md mx-auto px-4 py-1.5 flex justify-around">
+      
+      <!-- Home Button -->
+      <button onclick="switchTab('home')" id="nav-home" class="flex flex-col items-center gap-1 py-1.5 px-3 text-blue-500 transition-all">
+        <i data-lucide="home" class="w-5 h-5"></i>
+        <span class="text-[10px] font-bold">Home</span>
+      </button>
+
+      <!-- Tab 1 Button -->
+      <button onclick="switchTab('point1')" id="nav-point1" class="flex flex-col items-center gap-1 py-1.5 px-3 text-slate-400 hover:text-slate-200 transition-all">
+        <i data-lucide="users" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium">Point 1</span>
+      </button>
+
+      <!-- Tab 2 Button -->
+      <button onclick="switchTab('point2')" id="nav-point2" class="flex flex-col items-center gap-1 py-1.5 px-3 text-slate-400 hover:text-slate-200 transition-all">
+        <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium">Point 2</span>
+      </button>
+
+      <!-- Tab 3 Button -->
+      <button onclick="switchTab('point3')" id="nav-point3" class="flex flex-col items-center gap-1 py-1.5 px-3 text-slate-400 hover:text-slate-200 transition-all">
+        <i data-lucide="alert-octagon" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium">Point 3</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- JAVASCRIPT FOR DYNAMIC INTERACTIONS -->
+  <script>
+    // State Tracking
+    let activeTab = 'home';
+    let activeBrother = 'A';
+    let privacyBlurred = false;
+
+    // Switch between Agenda Focus Points
+    function switchTab(tabId) {
+      activeTab = tabId;
+      
+      // Update Pages Visibility
+      document.querySelectorAll('.tab-content').forEach(element => {
+        element.classList.add('hidden');
+      });
+      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+
+      // Update Bottom Navigation Styling
+      const tabs = ['home', 'point1', 'point2', 'point3'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`nav-${t}`);
+        if (t === tabId) {
+          btn.classList.add('text-blue-500');
+          btn.classList.remove('text-slate-400');
+          btn.querySelector('span').classList.replace('font-medium', 'font-bold');
+        } else {
+          btn.classList.remove('text-blue-500');
+          btn.classList.add('text-slate-400');
+          btn.querySelector('span').classList.replace('font-bold', 'font-medium');
+        }
+      });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Switch between Brother Sub-Tabs (Point 1)
+    function switchBrother(letter) {
+      activeBrother = letter;
+
+      // Update Panel visibility
+      document.querySelectorAll('.brother-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      document.getElementById(`panel-bro-${letter}`).classList.remove('hidden');
+
+      // Update Tab Styles
+      ['A', 'B', 'C'].forEach(l => {
+        const btn = document.getElementById(`btn-bro-${l}`);
+        if (l === letter) {
+          btn.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center bg-blue-600 text-white shadow-sm";
+        } else {
+          btn.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-center text-slate-400 hover:text-slate-200";
+        }
+      });
+    }
+
+    // Toggle Privacy/Stealth Mode (Blur names and placeholder info)
+    function togglePrivacy() {
+      privacyBlurred = !privacyBlurred;
+      
+      const targets = document.querySelectorAll('.sensitive-data');
+      const textBtn = document.getElementById('privacy-text');
+      const iconBtn = document.getElementById('privacy-icon');
+      const btn = document.getElementById('privacy-btn');
+
+      if (privacyBlurred) {
+        targets.forEach(el => {
+          el.classList.add('blur-sm', 'bg-slate-700', 'px-4', 'rounded');
+        });
+        textBtn.innerText = "Stealth On";
+        btn.classList.replace('bg-slate-800', 'bg-blue-600');
+        btn.classList.replace('border-slate-700', 'border-blue-500');
+        btn.classList.replace('text-slate-300', 'text-white');
+        iconBtn.setAttribute('data-lucide', 'eye-off');
+      } else {
+        targets.forEach(el => {
+          el.classList.remove('blur-sm', 'bg-slate-700', 'px-4', 'rounded');
+        });
+        textBtn.innerText = "Stealth Off";
+        btn.classList.replace('bg-blue-600', 'bg-slate-800');
+        btn.classList.replace('border-blue-500', 'border-slate-700');
+        btn.classList.replace('text-white', 'text-slate-300');
+        iconBtn.setAttribute('data-lucide', 'eye');
+      }
+      
+      // Re-render the icon
+      lucide.createIcons();
+    }
+
+    // Initialize Lucide Icons on load
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
